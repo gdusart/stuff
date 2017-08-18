@@ -7,13 +7,13 @@ DEST_HOSTS=("seedhost"  "autumnleaf")
 
 DATE=`date +%Y%m%d%H%M%S`
 BACKUP_FOLDER="/data/backup"
-BACKUP_FILE=$BACKUP_FOLDER"/home_greg-"$DATE".tar.gz"
+BACKUP_FILE="${BACKUP_FOLDER}/home_greg-${DATE}.tar.gz"
 
 tar -zcf "$BACKUP_FILE" /home/greg
 echo "File saved under $BACKUP_FILE"
 
 #SEND FILES USING SSH
-BACKUP_FOLDER="~/backup/"$HOSTNAME
+BACKUP_FOLDER="~/backup/$HOSTNAME"
 
 #Allow errors
 set +e
